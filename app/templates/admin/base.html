@@ -1,0 +1,25 @@
+<!-- a base html file for all admin pages; extends from the main base html file -->
+{% extends "base.html" %}
+
+{% block cssfiles %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{  url_for('static', filename='admin/admin.css')}}">
+{% endblock %}
+    
+{% block content %}
+    <!-- side nav part -->
+    <div class="admin-box">
+        <div class="sidebar">
+            <ul>
+                <li class=adminoption><a id="manageusers" href="{{ url_for('admin.manage', mode='user') }}">Manage Users</a></li>
+                <li class=adminoption><a id="manageproblems" href="{{ url_for('admin.manage', mode='problem') }}">Manage Problems</a></li>
+            </ul>
+        </div>
+    {% block admincontent %}{% endblock %}
+    </div>
+
+{% endblock %}
+
+{% block jsfiles %}
+<script src="{{ url_for('static', filename='admin/admin.js') }}"></script>
+{% endblock %}

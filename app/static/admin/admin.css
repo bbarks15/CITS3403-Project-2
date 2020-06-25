@@ -1,0 +1,272 @@
+/* this file is to style the all admin pages*/
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../Lato/Lato-Bold.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'Latol';
+    src: url('../Lato/Lato-Light.ttf') format('truetype')
+}
+
+/* initialize the body */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f0f0f0;
+    font-family: Lato, sans-serif;
+}
+
+.admin-box  {
+    margin-bottom: 38em;
+}
+
+/* the side nav */
+.admin-box .sidebar {
+    position: fixed; 
+    margin-top: 5em;
+    margin-left: 2em;
+}
+
+/* initial the elements */
+.admin-box .sidebar ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* style the side nav bars */
+.admin-box .sidebar ul li a {
+    padding: 18px;
+    display: block;
+    color: aliceblue;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+/* the content part style */
+.admin-box .content {
+    margin: 15px 15px 15px;
+    margin-left: 15em;
+    padding: 3em;
+    background-color: white;
+    box-shadow: 2px 2px 3px 3px #e0e0e0;
+}
+
+/* initial the button */
+.content .button-group {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.adminoption {
+    background-color: #0f3f8d;
+    border-radius: 4px;
+    width: 11em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    list-style-type: none;
+    box-shadow: 1px 1px 1px 1px #ababab;
+}
+
+/* style the button of back to manage page */
+.button1 {
+    font-family: Lato;
+    background: #0f3f8d;
+    padding: 10px;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+/* style the hover button*/
+.button1:hover {
+    color: #299ace;
+}
+
+/* style the page title */
+.content .pagetitle {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #575f5f;
+    font-family: 'Lato';
+}
+
+/* the data table */
+.content table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.1rem;
+}
+
+/* style the header and data of the table */
+.content th,
+.content td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #343837;
+}
+
+/* style the table header */
+.content th {
+    cursor: pointer;
+}
+
+/* style the table header when hovering*/
+.content th:hover {
+    background-color: #2d6cdf;
+    padding: 10px;
+    transition: 0.8s;
+}
+
+/* style the delete button */
+.content .delete {
+    color: red;
+}
+
+/* style the hover delete button */
+.content .delete:hover {
+    background: #032d30;
+    border-color: #032d30;
+    cursor: pointer;
+}
+
+/* style the edit button */
+.content .edit {
+    color: green;
+    margin: 0;
+}
+
+/* style the hover edit button */
+.content .edit:hover {
+    background: #032d30;
+    border-color: #032d30;
+    cursor: pointer;
+}
+
+/* Style the button in the functional pages */
+.button2 {
+    font-family: Lato;
+    background: #284047;
+    padding: 10px;
+    color: aliceblue;
+    text-decoration: none;
+    border: none;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+/* style the hover functinal pages button */
+.button2:hover {
+    color: #299ace;
+}
+
+/* make more space between every  part in form*/
+.addform div {
+    margin-bottom: 25px;
+}
+
+/* style the label of inputs */
+.addform label{
+    font-family: Lato;
+    margin-bottom: 3px;
+    color: #534b4b;
+    font-weight: bold;
+}
+
+/* style the input and options */
+.addform input,
+.addform select {
+    width: 40%;
+    border: 2px solid #575f5f;
+    height: 30px;
+}
+
+/* style the hover button of input and options bar */
+.addform input:hover,
+.addform select:hover {
+    border-color: #1a9973;
+}
+
+/* style the clicked input and options bar */
+.addform input:focus,
+.addform select:focus {
+    border: 3px solid #299ace;
+}
+
+/* style the assess button */
+.assess {
+    background: #646668;
+    color: #f3e6e6;
+    border: none;
+    cursor: pointer;
+}
+
+/* style the hover assess button */
+.assess:hover {
+    background: #2e302f;
+}
+
+/* style the text area of the assess part */
+.assessdisplay {
+    resize: none;
+    height: 100px;
+    width: 50%;
+    font-family: Georgia;
+    font-size: 16px;
+    color: #666060;
+    border: 1px solid #abaec5;
+    border-radius: 1px;
+    overflow: scroll;
+}
+
+.tabcontenthidden {
+    display: none;
+}
+
+#editor { 
+    height: 15cm;
+    width: 70%;
+    margin: 1cm;
+    /* padding: 1cm; */
+    position: sticky;
+}
+
+.addform div {
+    margin-bottom: 0px;
+}
+
+@media
+only screen and (max-width: 1200px) {
+  #managetable-api,
+  #managetable-api thead,
+  #managetable-api tbody,
+  #managetable-api th,
+  #managetable-api td,
+  #managetable-api tr {
+    display: block;
+  }
+
+  #managetable-api thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  #managetable-api tr { 
+    border: 1px solid gray; 
+  }
+
+  #managetable-api td {
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    position: relative;
+    padding-left: 10px;
+    margin-left: 0;
+  }
+
+  #managetable-api td:last-child {
+    border-bottom: none;
+  }
+}

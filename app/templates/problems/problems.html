@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block cssfiles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='problems/problem.css')}}">
+{% endblock %}
+
+{% block content %}
+            <h3 style="margin-left: 5%; padding-top: 1cm;">All questions are stolen from <a href="https://pcs.org.au/" style="color: darkblue;">UWA PCS</a>. All credit goes to their respective authors</h1>
+            <div class=questionWrapper>
+            {% for problem in problems %}
+                <a class="questionBoxLink" href="{{ url_for('problems.problem', title=''.join(problem.title.split()).lower()) }}">
+                {% if problem.id in status %}
+                <div class="{{ 'questionBoxSolved' if status[problem.id] else 'questionBoxNotSolved'}}">
+                {% else %}
+            <div class="questionBox">
+                {% endif %}
+                    <h2> {{ problem.title }} </h2>
+                    {%if problem.difficulty == '0'%}
+                    <p>Difficulty: Beginner</p>
+                    {%elif problem.difficulty == '1'%}
+                    <p>Difficulty: Intermediate</p>
+                    {%elif problem.difficulty == '2'%}
+                    <p>Difficulty: advanced</p>
+                    {%elif problem.difficulty == '3'%}
+                    <p>Difficulty: Expert</p>
+                    {% endif %}
+                    <p > Attempts: {{problem.numAttempts}}</p>
+                    {% if problem.numAttempts == 0%}
+                        <p >Success Rate: 0%</p>
+                    {% else %}
+                        {% set rate = problem.numSuccesses/problem.numAttempts*100 %}
+                        <p >Success Rate: {{'%0.2f' % rate|float}}%</p>
+                    {%endif%}
+                </div>    
+                </a>
+            {% endfor %}
+            </div>
+{% endblock %}

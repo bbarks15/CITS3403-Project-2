@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block cssfiles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='problems/problem.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+
+{% block content %}
+
+
+<!-- Need | safe to render the HTML (security feature) -->
+
+<div class="container">
+    <div class="one">
+    <!-- Need | safe to render the HTML (security feature) -->
+    {{ body | safe }}
+    <p>Time Limit: {{ problem.timeLimit }}s</p>
+    </div>
+    <div class="two">
+        
+        <div id="editor"></div>
+        <button id="settings" onclick="editor.execCommand('showSettingsMenu')">Editor Settings</button>
+        <label for="language">Choose a Language: </label>
+
+        <select id="language">
+          <option value="cpp">C++</option>
+          <option value="py">Python 3</option>
+        </select>
+        {% if current_user.is_authenticated %}
+        <button id="submit">Submit</button>
+        {% else %}
+        <button disabled>Login To Submit</button>
+        {% endif %}
+        
+        <!-- PUT AFTER EDITOR DIV -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+        <div id="results">
+            <p>Result</p>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
