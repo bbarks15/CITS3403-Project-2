@@ -91,31 +91,3 @@ to:
 	app = create_app(TestConfig)
 
 Then make sure the app is running in the background before running `python -m tests.system`
-
-# ADD STUFF
-
-Before comment on line 283
-
-	function validateQuestion() {
-		return $("#problemTitle").val().trim() != "" && editor.getValue().trim() != "";
-	}
-
-A minus B solution
-
-	#include <bits/stdc++.h>
-	using namespace std;
-
-	int main(void) {
-
-			int n;
-			cin >> n;
-
-			while(n--) {
-					int a, b;
-					cin >> a >> b;
-					cout << a - b << "\n";
-			}
-
-			return 0;
-
-	}
